@@ -5,7 +5,7 @@
     "": {
       "name": "@sudobility/sider_client",
       "dependencies": {
-        "@sudobility/sider_types": "^0.0.2",
+        "@sudobility/sider_types": "^0.0.3",
       },
       "devDependencies": {
         "@tanstack/react-query": "^5.62.7",
@@ -20,7 +20,7 @@
     },
   },
   "packages": {
-    "@sudobility/sider_types": ["@sudobility/sider_types@0.0.2", "", {}, "sha512-/qM2QTqz6yAPG4TgVebZtDzHb1MWLKLmoCd15CK1dUnjskej9JoocegHhBEH1+y3WrfC0Sp8IYbpchn7MpPvDg=="],
+    "@sudobility/sider_types": ["@sudobility/sider_types@0.0.3", "", {}, "sha512-52mShrMUn2qQyPRlKjQUaDJUufERul3huYX2tsxmqC/y5W0K5po5unW18owLS/vPXOownKEf5OIiG/Z74ZrVIg=="],
 
     "@tanstack/query-core": ["@tanstack/query-core@5.101.2", "", {}, "sha512-hH5MLoJhF7KaIGd7q3xTXGXvslI+GYlM1Z/35aSHHWaCJWB7XvTSHYuV3eM7tw+aE0mT/xMro4M4Q9rCGHT0lw=="],
 

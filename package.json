@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/sider_client",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Sider frontend network library — typed API client + React Query hooks.",
   "license": "BUSL-1.1",
   "publishConfig": {
@@ -28,7 +28,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@sudobility/sider_types": "^0.0.2"
+    "@sudobility/sider_types": "^0.0.3"
   },
   "peerDependencies": {
     "@tanstack/react-query": "^5",
