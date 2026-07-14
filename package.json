@@ -1,23 +1,34 @@
 {
   "name": "@sudobility/sider_client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sider frontend network library — typed API client + React Query hooks.",
   "license": "BUSL-1.1",
-  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "exports": {
-    ".": { "types": "./src/index.ts", "default": "./src/index.ts" },
-    "./core": { "types": "./src/core.ts", "default": "./src/core.ts" }
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./core": {
+      "types": "./src/core.ts",
+      "default": "./src/core.ts"
+    }
   },
-  "files": ["src", "dist"],
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@sudobility/sider_types": "file:../sider_types"
+    "@sudobility/sider_types": "^0.0.2"
   },
   "peerDependencies": {
     "@tanstack/react-query": "^5",
