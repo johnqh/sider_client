@@ -14,7 +14,7 @@ function client(networkClient: NetworkClient, baseUrl: string): SiderClient {
 export function useSiteLookup(
   networkClient: NetworkClient,
   baseUrl: string,
-  token: string,
+  _token: string,
   origin: string | null,
   options?: QueryOpts<Awaited<ReturnType<SiderClient["lookup"]>>>,
 ) {
@@ -29,7 +29,7 @@ export function useSiteLookup(
 export function useSites(
   networkClient: NetworkClient,
   baseUrl: string,
-  token: string,
+  _token: string,
   options?: QueryOpts<Awaited<ReturnType<SiderClient["listSites"]>>>,
 ) {
   return useQuery({
@@ -42,7 +42,7 @@ export function useSites(
 export function useSite(
   networkClient: NetworkClient,
   baseUrl: string,
-  token: string,
+  _token: string,
   siteId: string | null,
   options?: QueryOpts<Awaited<ReturnType<SiderClient["getSite"]>>>,
 ) {
@@ -57,7 +57,7 @@ export function useSite(
 export function useStats(
   networkClient: NetworkClient,
   baseUrl: string,
-  token: string,
+  _token: string,
   options?: QueryOpts<Awaited<ReturnType<SiderClient["getStats"]>>>,
 ) {
   return useQuery({
@@ -70,7 +70,7 @@ export function useStats(
 export function useToolCatalog(
   networkClient: NetworkClient,
   baseUrl: string,
-  token: string,
+  _token: string,
   siteId: string | null,
   opts?: { includeProvisional?: boolean; includeFlagged?: boolean },
   options?: QueryOpts<Awaited<ReturnType<SiderClient["getTools"]>>>,
@@ -92,7 +92,7 @@ export function useToolCatalog(
 export function useSiteTemplates(
   networkClient: NetworkClient,
   baseUrl: string,
-  token: string,
+  _token: string,
   siteId: string | null,
   options?: QueryOpts<Awaited<ReturnType<SiderClient["getSiteTemplates"]>>>,
 ) {
@@ -107,7 +107,7 @@ export function useSiteTemplates(
 export function useSiteSlots(
   networkClient: NetworkClient,
   baseUrl: string,
-  token: string,
+  _token: string,
   siteId: string | null,
   options?: QueryOpts<Awaited<ReturnType<SiderClient["getSiteSlots"]>>>,
 ) {
@@ -122,7 +122,7 @@ export function useSiteSlots(
 export function useSiteGraph(
   networkClient: NetworkClient,
   baseUrl: string,
-  token: string,
+  _token: string,
   siteId: string | null,
   options?: QueryOpts<Awaited<ReturnType<SiderClient["getSiteGraph"]>>>,
 ) {
@@ -137,7 +137,7 @@ export function useSiteGraph(
 export function useToolDetail(
   networkClient: NetworkClient,
   baseUrl: string,
-  token: string,
+  _token: string,
   toolId: string | null,
   options?: QueryOpts<Awaited<ReturnType<SiderClient["getToolDetail"]>>>,
 ) {
@@ -209,7 +209,7 @@ export function useMyTools(
   });
 }
 
-export function useCaptureUpload(networkClient: NetworkClient, baseUrl: string, token: string) {
+export function useCaptureUpload(networkClient: NetworkClient, baseUrl: string, _token: string) {
   return useMutation({
     mutationFn: (body: CaptureRequest) => client(networkClient, baseUrl).uploadCapture(body),
   });
