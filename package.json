@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/sider_client",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Sider frontend network library — injected NetworkClient + React Query hooks.",
   "license": "BUSL-1.1",
   "publishConfig": {
@@ -29,13 +29,13 @@
     "test": "bun test"
   },
   "peerDependencies": {
-    "@sudobility/sider_types": "^0.0.3",
+    "@sudobility/sider_types": "^0.0.5",
     "@sudobility/types": "^1.9.62",
     "@tanstack/react-query": "^5",
     "react": "^18 || ^19"
   },
   "devDependencies": {
-    "@sudobility/sider_types": "^0.0.3",
+    "@sudobility/sider_types": "^0.0.5",
     "@sudobility/types": "^1.9.62",
     "@tanstack/react-query": "^5.62.7",
     "@types/bun": "^1.2.23",
