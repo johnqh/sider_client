@@ -1,46 +1,46 @@
 {
-	"name": "@sudobility/sider_client",
-	"version": "0.1.0",
-	"description": "Sider frontend network library — injected NetworkClient + React Query hooks.",
-	"license": "BUSL-1.1",
-	"publishConfig": {
-		"access": "restricted"
-	},
-	"type": "module",
-	"main": "src/index.ts",
-	"types": "src/index.ts",
-	"exports": {
-		".": {
-			"types": "./src/index.ts",
-			"default": "./src/index.ts"
-		},
-		"./core": {
-			"types": "./src/core.ts",
-			"default": "./src/core.ts"
-		}
-	},
-	"files": [
-		"src",
-		"dist"
-	],
-	"scripts": {
-		"build": "tsc -p tsconfig.json",
-		"typecheck": "tsc --noEmit",
-		"test": "bun test"
-	},
-	"peerDependencies": {
-		"@sudobility/sider_types": "^0.0.4",
-		"@sudobility/types": ">=1.9.0",
-		"@tanstack/react-query": "^5",
-		"react": "^18 || ^19"
-	},
-	"devDependencies": {
-		"@sudobility/sider_types": "^0.0.4",
-		"@sudobility/types": "^1.9.62",
-		"@tanstack/react-query": "^5.62.7",
-		"@types/bun": "^1.2.23",
-		"@types/react": "^18.3.12",
-		"react": "^18.3.1",
-		"typescript": "^5.9.3"
-	}
+  "name": "@sudobility/sider_client",
+  "version": "0.1.1",
+  "description": "Sider frontend network library — injected NetworkClient + React Query hooks.",
+  "license": "BUSL-1.1",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./core": {
+      "types": "./src/core.ts",
+      "default": "./src/core.ts"
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "peerDependencies": {
+    "@sudobility/sider_types": "^0.0.3",
+    "@sudobility/types": "^1.9.62",
+    "@tanstack/react-query": "^5",
+    "react": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@sudobility/sider_types": "^0.0.3",
+    "@sudobility/types": "^1.9.62",
+    "@tanstack/react-query": "^5.62.7",
+    "@types/bun": "^1.2.23",
+    "@types/react": "^18.3.12",
+    "react": "^18.3.1",
+    "typescript": "^5.9.3"
+  }
 }
