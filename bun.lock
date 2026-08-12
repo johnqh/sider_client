@@ -5,7 +5,7 @@
     "": {
       "name": "@sudobility/sider_client",
       "devDependencies": {
-        "@sudobility/sider_types": "^0.0.8",
+        "@sudobility/sider_types": "^0.0.10",
         "@sudobility/types": "^1.9.64",
         "@tanstack/react-query": "^5.62.7",
         "@types/bun": "^1.2.23",
@@ -14,7 +14,7 @@
         "typescript": "^5.9.3",
       },
       "peerDependencies": {
-        "@sudobility/sider_types": "^0.0.8",
+        "@sudobility/sider_types": "^0.0.10",
         "@sudobility/types": "^1.9.64",
         "@tanstack/react-query": "^5",
         "react": "^18 || ^19",
@@ -22,7 +22,7 @@
     },
   },
   "packages": {
-    "@sudobility/sider_types": ["@sudobility/sider_types@0.0.8", "", {}, "sha512-MWMmJ5EwchCopTZuzqaq+N8VcI5Bepc4o9Z5NF0EDh4ib9XX/GtFFJsDiVWXrmLK6CjVJgi6L9LxA7x0EAzv+w=="],
+    "@sudobility/sider_types": ["@sudobility/sider_types@0.0.10", "", {}, "sha512-U44+F3TFZaKuzJv/tlSHVCWcd/OFAuQ2Jen0mpgl1KNZHL2Y7hcohoPiAM3k8t20ewWKMN6HbsgNvnvd2bZSvw=="],
 
     "@sudobility/types": ["@sudobility/types@1.9.64", "", {}, "sha512-fiOxOM1vNK2Vp5B324POcRhq6XOoeoHInP3GbvGPmn8MvsoAl0hgO2X4gJh2VZIybFZwIdE4SD0dO1vu/JgFSA=="],
 
