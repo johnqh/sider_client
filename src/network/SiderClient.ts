@@ -106,4 +106,49 @@ export class SiderClient {
   getToolDetail(toolId: string): Promise<ToolDetailResponse> {
     return this.get(`/api/v1/tools/${toolId}`);
   }
+
+  // --- public directories of what the graph knows -------------------------
+
+  listMcp(params: { limit?: number; offset?: number; q?: string }): Promise<DirectoryPage> {
+    return this.get(`/api/v1/mcp${queryString(params)}`);
+  }
+
+  mcpManifest(host: string): Promise<unknown> {
+    return this.get(`/api/v1/mcp/${encodeURIComponent(host)}`);
+  }
+
+  listGraphs(params: { limit?: number; offset?: number; q?: string }): Promise<DirectoryPage> {
+    return this.get(`/api/v1/graph${queryString(params)}`);
+  }
+
+  graphDetail(appKey: string): Promise<unknown> {
+    return this.get(`/api/v1/graph/${encodeURIComponent(appKey)}`);
+  }
+}
+
+/** One row of the public directories. */
+export interface DirectoryApp {
+  id: number;
+  key: string;
+  host: string | null;
+  title: string | null;
+  endpointCount: number;
+  viewCount: number;
+  lastEndpointAt: string | null;
+  lastViewAt: string | null;
+}
+
+export interface DirectoryPage {
+  apps: DirectoryApp[];
+  /** The count BEFORE the limit, so a pager knows how many pages there are. */
+  total: number;
+}
+
+function queryString(params: Record<string, unknown>): string {
+  const qs = new URLSearchParams();
+  for (const [k, v] of Object.entries(params)) {
+    if (v !== undefined && v !== null && v !== "") qs.set(k, String(v));
+  }
+  const s = qs.toString();
+  return s ? `?${s}` : "";
 }

@@ -212,3 +212,59 @@ export function useCaptureUpload(networkClient: NetworkClient, baseUrl: string) 
     mutationFn: (body: CaptureRequest) => client(networkClient, baseUrl).uploadCapture(body),
   });
 }
+
+// --- public directories: what the graph knows ------------------------------
+
+export function useMcpList(
+  networkClient: NetworkClient,
+  baseUrl: string,
+  params: { limit?: number; offset?: number; q?: string },
+  options?: QueryOpts<Awaited<ReturnType<SiderClient["listMcp"]>>>,
+) {
+  return useQuery({
+    queryKey: ["sider", "mcp", params],
+    queryFn: () => client(networkClient, baseUrl).listMcp(params),
+    ...options,
+  });
+}
+
+export function useMcpManifest(
+  networkClient: NetworkClient,
+  baseUrl: string,
+  host: string | null,
+  options?: QueryOpts<Awaited<ReturnType<SiderClient["mcpManifest"]>>>,
+) {
+  return useQuery({
+    queryKey: ["sider", "mcp", "manifest", host],
+    queryFn: () => client(networkClient, baseUrl).mcpManifest(host as string),
+    ...options,
+    enabled: !!host && (options?.enabled ?? true),
+  });
+}
+
+export function useGraphList(
+  networkClient: NetworkClient,
+  baseUrl: string,
+  params: { limit?: number; offset?: number; q?: string },
+  options?: QueryOpts<Awaited<ReturnType<SiderClient["listGraphs"]>>>,
+) {
+  return useQuery({
+    queryKey: ["sider", "graph", params],
+    queryFn: () => client(networkClient, baseUrl).listGraphs(params),
+    ...options,
+  });
+}
+
+export function useGraphDetail(
+  networkClient: NetworkClient,
+  baseUrl: string,
+  appKey: string | null,
+  options?: QueryOpts<Awaited<ReturnType<SiderClient["graphDetail"]>>>,
+) {
+  return useQuery({
+    queryKey: ["sider", "graph", "detail", appKey],
+    queryFn: () => client(networkClient, baseUrl).graphDetail(appKey as string),
+    ...options,
+    enabled: !!appKey && (options?.enabled ?? true),
+  });
+}

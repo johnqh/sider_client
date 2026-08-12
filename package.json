@@ -1,6 +1,6 @@
 {
   "name": "@sudobility/sider_client",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Sider frontend network library — injected NetworkClient + React Query hooks.",
   "license": "BUSL-1.1",
   "publishConfig": {
