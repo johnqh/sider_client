@@ -228,6 +228,24 @@ export function useMcpList(
   });
 }
 
+/**
+ * This contributor's points.
+ *
+ * Enabled only when signed in: the endpoint is authenticated, so calling it
+ * without a token buys a 401 on every mount.
+ */
+export function usePoints(
+  networkClient: NetworkClient,
+  baseUrl: string,
+  options?: QueryOpts<Awaited<ReturnType<SiderClient["points"]>>>,
+) {
+  return useQuery({
+    queryKey: ["sider", "points"],
+    queryFn: () => client(networkClient, baseUrl).points(),
+    ...options,
+  });
+}
+
 export function useMcpManifest(
   networkClient: NetworkClient,
   baseUrl: string,

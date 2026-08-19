@@ -22,6 +22,13 @@ import type {
  * concern (e.g. auth_lib's Firebase Bearer client); this class only builds
  * URLs and unwraps the ApiResponse envelope.
  */
+/** Points earned for contributing training data. */
+export interface PointsSummary {
+  total: number;
+  /** How many pages this contributor was first to land on. */
+  newPages: number;
+}
+
 export class SiderClient {
   constructor(
     private readonly network: NetworkClient,
@@ -105,6 +112,17 @@ export class SiderClient {
 
   getToolDetail(toolId: string): Promise<ToolDetailResponse> {
     return this.get(`/api/v1/tools/${toolId}`);
+  }
+
+  /**
+   * What this contributor has earned.
+   *
+   * Authenticated, and always about the caller: the server reads the
+   * contributor from the verified token, so there is no parameter to pass and
+   * no way to ask about anybody else.
+   */
+  points(): Promise<PointsSummary> {
+    return this.get("/api/v1/points");
   }
 
   // --- public directories of what the graph knows -------------------------
